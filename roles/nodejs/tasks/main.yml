@@ -8,7 +8,7 @@
 
 - name: npm local install
   become: yes
-  npm: name={{item}} path=/home/osboxes/Public/bamboo-app
+  npm: name={{item}} path=/tmp/bamboo-app
   with_items:
     - httpdispatcher
 

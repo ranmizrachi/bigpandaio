@@ -14,7 +14,7 @@ function handleRequest(request, response){
 }
 
 dispatcher.setStatic('/resources');
-dispatcher.setStaticDirname('/home/osboxes/Public/bamboo-app/resources');
+dispatcher.setStaticDirname('/tmp/resources');
 
 dispatcher.onGet("/", function(req, res) {
     count++;
