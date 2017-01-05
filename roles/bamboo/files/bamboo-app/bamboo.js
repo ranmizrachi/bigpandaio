@@ -1,6 +1,8 @@
 var http = require('http');
 var config = require('./config.json');
-var dispatcher = require('httpdispatcher');
+var HttpDispatcher  = require('httpdispatcher');
+var dispatcher     = new HttpDispatcher();
+var count = 0;
 
 function handleRequest(request, response){
     try {
@@ -11,9 +13,13 @@ function handleRequest(request, response){
     }
 }
 
+dispatcher.setStatic('/resources');
+dispatcher.setStaticDirname('/home/osboxes/Public/bamboo-app/resources');
+
 dispatcher.onGet("/", function(req, res) {
+    count++;
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('I <3 Bamboo');
+    res.end('I <3 Bamboo - number of gets='+count);
 });
 
 dispatcher.onError(function(req, res) {

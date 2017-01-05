@@ -7,7 +7,7 @@
       hostname: name={{inventory_hostname}}
 
 - name: Base bamboo service
-  hosts: base
+  hosts: localhost 
   become: yes
   roles:
     - { role: nodejs, tags: nodejs }
