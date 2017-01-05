@@ -6,7 +6,7 @@
     - nodejs
     - npm
 
-- name: npm global install
+- name: npm local install
   become: yes
   npm: name={{item}} path=/home/osboxes/Public/bamboo-app
   with_items:
